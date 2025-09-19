@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import {
@@ -11,7 +12,6 @@ import {
 } from '@/components/ui/table';
 import { Badge } from '@/components/ui/badge';
 import { X, Brain, Check, Thermometer, Wifi, Zap } from 'lucide-react';
-import { DiagnosisModal } from './DiagnosisModal';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 export interface Sensor {
@@ -153,8 +153,7 @@ const SensorCard = ({
 };
 
 export const SensorTable = () => {
-	const [selectedSensor, setSelectedSensor] = useState<Sensor | null>(null);
-	const [isModalOpen, setIsModalOpen] = useState(false);
+	const navigate = useNavigate();
 	const [sensors, setSensors] = useState<Sensor[]>([]);
 	const [loading, setLoading] = useState(true);
 	const isMobile = useIsMobile();
@@ -199,8 +198,7 @@ export const SensorTable = () => {
 	};
 
 	const handleDiagnose = (sensor: Sensor) => {
-		setSelectedSensor(sensor);
-		setIsModalOpen(true);
+		navigate(`/diagnosis/${sensor.sensorId}`);
 	};
 
 	if (loading) {
@@ -331,12 +329,6 @@ export const SensorTable = () => {
 					</CardContent>
 				</Card>
 			)}
-
-			<DiagnosisModal
-				isOpen={isModalOpen}
-				onClose={() => setIsModalOpen(false)}
-				sensor={selectedSensor}
-			/>
 		</div>
 	);
 };

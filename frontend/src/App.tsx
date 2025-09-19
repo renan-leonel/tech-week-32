@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Index from './pages/Index';
 import NotFound from './pages/NotFound';
 import PdfViewer from './pages/PdfViewer';
+import DiagnosisPage from './pages/DiagnosisPage';
 
 const queryClient = new QueryClient();
 
@@ -16,6 +17,10 @@ const App = () => (
 			<Routes>
 				<Route path='/' element={<Index />} />
 				<Route path='/pdf' element={<PdfViewer />} />
+				<Route
+					path='/diagnosis/:sensorId'
+					element={<DiagnosisPage />}
+				/>
 				<Route path='*' element={<NotFound />} />
 			</Routes>
 		</BrowserRouter>
