@@ -209,16 +209,6 @@ const DiagnosisPage = () => {
 		loadSensor();
 	}, [sensorId]);
 
-	// Auto-scroll effect when text is streaming
-	useEffect(() => {
-		if (diagnosisState.isStreaming && diagnosisTextRef.current) {
-			diagnosisTextRef.current.scrollIntoView({
-				behavior: 'smooth',
-				block: 'end',
-			});
-		}
-	}, [diagnosisState.displayedText, diagnosisState.isStreaming]);
-
 	useEffect(() => {
 		if (
 			sensor &&
