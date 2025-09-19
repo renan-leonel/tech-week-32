@@ -6,6 +6,114 @@ import { Badge } from '@/components/ui/badge';
 import { Bot, AlertTriangle, ArrowLeft } from 'lucide-react';
 import { Sensor } from '@/components/SensorTable';
 
+// API Response interfaces (same as in SensorTable)
+interface HealthStatus {
+	sensor_id: string;
+	timestamp: string;
+	connectivity_ok: boolean;
+	acceleration_ok: boolean;
+	temperature_ok: boolean;
+	overall_health: string;
+	connectivity_signal: number | null;
+	max_acceleration: number | null;
+	max_temperature: number | null;
+	issues: string[];
+}
+
+interface SensorHealthAnalysis {
+	sensor_id: string;
+	analysis_timestamp: string;
+	health_status: HealthStatus;
+	recommendations: string[];
+}
+
+// Mock sensor data for fallback
+const mockSensors: Sensor[] = [
+	{
+		id: '1',
+		sensorId: 'SML1627',
+		temperature: false,
+		vibration: false,
+		connectivity: false,
+	},
+	{
+		id: '2',
+		sensorId: 'NYS0043',
+		temperature: true,
+		vibration: true,
+		connectivity: true,
+	},
+	{
+		id: '3',
+		sensorId: 'KPC3319',
+		temperature: true,
+		vibration: true,
+		connectivity: true,
+	},
+];
+
+// Helper function to convert API response to Sensor format (same as in SensorTable)
+const convertApiResponseToSensors = (
+	apiResponse: SensorHealthAnalysis[]
+): Sensor[] => {
+	return apiResponse.map((analysis, index) => ({
+		id: (index + 1).toString(),
+		sensorId: analysis.sensor_id,
+		temperature: analysis.health_status.temperature_ok,
+		vibration: analysis.health_status.acceleration_ok,
+		connectivity: analysis.health_status.connectivity_ok,
+	}));
+};
+
+// API function to fetch sensors data (same as in SensorTable)
+const fetchSensors = async (sensorIds?: string[]): Promise<Sensor[]> => {
+	try {
+		// Try to fetch from real API
+		const response = await fetch(
+			'http://10.8.160.254:8000/health/analysis',
+			{
+				method: 'GET',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+			}
+		);
+
+		if (!response.ok) {
+			throw new Error(
+				`API request failed with status: ${response.status}`
+			);
+		}
+
+		const apiData: SensorHealthAnalysis[] = await response.json();
+		const sensors = convertApiResponseToSensors(apiData);
+
+		// If URL params are provided, filter sensors by those IDs
+		if (sensorIds && sensorIds.length > 0) {
+			return sensors.filter((sensor) =>
+				sensorIds.includes(sensor.sensorId)
+			);
+		}
+
+		return sensors;
+	} catch (error) {
+		console.warn('API request failed, falling back to mock data:', error);
+
+		// Fallback to mock data - return immediately without Promise wrapper
+		if (sensorIds && sensorIds.length > 0) {
+			// If URL params are provided, filter sensors by those IDs
+			const filteredSensors = mockSensors.filter((sensor) =>
+				sensorIds.includes(sensor.sensorId)
+			);
+			// Return filtered sensors (even if empty array - no fallback to all sensors)
+			return filteredSensors;
+		} else {
+			// If no URL params, return all mock sensors
+			return mockSensors;
+		}
+	}
+};
+
 // API function to fetch diagnosis from the backend
 const fetchDiagnosisFromLLM = async (sensorId: string): Promise<string> => {
 	try {
@@ -57,36 +165,13 @@ const fetchDiagnosisFromLLM = async (sensorId: string): Promise<string> => {
 	}
 };
 
-// Mock sensor data (same as in SensorTable)
-const mockSensors: Sensor[] = [
-	{
-		id: '1',
-		sensorId: 'SML1627',
-		temperature: false,
-		vibration: false,
-		connectivity: false,
-	},
-	{
-		id: '2',
-		sensorId: 'NYS0043',
-		temperature: true,
-		vibration: true,
-		connectivity: true,
-	},
-	{
-		id: '3',
-		sensorId: 'KPC3319',
-		temperature: true,
-		vibration: true,
-		connectivity: true,
-	},
-];
-
 const DiagnosisPage = () => {
 	const { sensorId } = useParams<{ sensorId: string }>();
 	const navigate = useNavigate();
 	const diagnosisTextRef = useRef<HTMLPreElement>(null);
 	const [sensor, setSensor] = useState<Sensor | null>(null);
+	const [loading, setLoading] = useState(true);
+
 	const [diagnosisState, setDiagnosisState] = useState<{
 		displayedText: string;
 		isStreaming: boolean;
@@ -101,11 +186,27 @@ const DiagnosisPage = () => {
 	});
 
 	useEffect(() => {
-		// Find sensor by sensorId from URL params
-		const foundSensor = mockSensors.find((s) => s.sensorId === sensorId);
-		if (foundSensor) {
-			setSensor(foundSensor);
-		}
+		// Fetch sensor data from API
+		const loadSensor = async () => {
+			if (!sensorId) return;
+
+			setLoading(true);
+			try {
+				const sensors = await fetchSensors([sensorId]);
+				const foundSensor = sensors.find(
+					(s) => s.sensorId === sensorId
+				);
+				if (foundSensor) {
+					setSensor(foundSensor);
+				}
+			} catch (error) {
+				console.error('Failed to fetch sensor:', error);
+			} finally {
+				setLoading(false);
+			}
+		};
+
+		loadSensor();
 	}, [sensorId]);
 
 	// Auto-scroll effect when text is streaming
@@ -174,6 +275,20 @@ const DiagnosisPage = () => {
 		diagnosisState.isStreaming,
 		diagnosisState.isError,
 	]);
+
+	if (loading) {
+		return (
+			<div className='min-h-screen bg-gradient-to-br from-background via-secondary/20 to-accent/10 flex items-center justify-center'>
+				<Card className='max-w-md mx-auto'>
+					<CardContent className='p-6 text-center'>
+						<div className='text-muted-foreground'>
+							Loading sensor data...
+						</div>
+					</CardContent>
+				</Card>
+			</div>
+		);
+	}
 
 	if (!sensor) {
 		return (
