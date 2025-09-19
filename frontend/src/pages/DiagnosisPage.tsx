@@ -146,7 +146,7 @@ const DiagnosisPage = () => {
 								),
 							}));
 							currentIndex++;
-							setTimeout(streamText, 10); // Adjust speed here
+							setTimeout(streamText, 2); // Adjust speed here
 						} else {
 							setDiagnosisState((prev) => ({
 								...prev,
