@@ -49,13 +49,14 @@ const fetchSensors = async (sensorIds?: string[]): Promise<Sensor[]> => {
 	return new Promise((resolve) => {
 		setTimeout(() => {
 			if (sensorIds && sensorIds.length > 0) {
+				// If URL params are provided, filter sensors by those IDs
 				const filteredSensors = mockSensors.filter((sensor) =>
 					sensorIds.includes(sensor.sensorId)
 				);
-				resolve(
-					filteredSensors.length > 0 ? filteredSensors : mockSensors
-				);
+				// Return filtered sensors (even if empty array - no fallback to all sensors)
+				resolve(filteredSensors);
 			} else {
+				// If no URL params, return all mock sensors
 				resolve(mockSensors);
 			}
 		}, 100); // Simulate network delay
