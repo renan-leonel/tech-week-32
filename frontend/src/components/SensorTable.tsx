@@ -22,6 +22,27 @@ export interface Sensor {
 	connectivity: boolean;
 }
 
+// API Response interfaces
+interface HealthStatus {
+	sensor_id: string;
+	timestamp: string;
+	connectivity_ok: boolean;
+	acceleration_ok: boolean;
+	temperature_ok: boolean;
+	overall_health: string;
+	connectivity_signal: number | null;
+	max_acceleration: number | null;
+	max_temperature: number | null;
+	issues: string[];
+}
+
+interface SensorHealthAnalysis {
+	sensor_id: string;
+	analysis_timestamp: string;
+	health_status: HealthStatus;
+	recommendations: string[];
+}
+
 const mockSensors: Sensor[] = [
 	{
 		id: '1',
@@ -46,28 +67,66 @@ const mockSensors: Sensor[] = [
 	},
 ];
 
+// Helper function to convert API response to Sensor format
+const convertApiResponseToSensors = (
+	apiResponse: SensorHealthAnalysis[]
+): Sensor[] => {
+	return apiResponse.map((analysis, index) => ({
+		id: (index + 1).toString(),
+		sensorId: analysis.sensor_id,
+		temperature: analysis.health_status.temperature_ok,
+		vibration: analysis.health_status.acceleration_ok,
+		connectivity: analysis.health_status.connectivity_ok,
+	}));
+};
+
 // API function to fetch sensors data
 const fetchSensors = async (sensorIds?: string[]): Promise<Sensor[]> => {
-	// TODO: Replace with actual API call
-	// const response = await fetch(`/api/sensors${sensorIds ? `?ids=${sensorIds.join(',')}` : ''}`);
-	// return response.json();
-
-	// For now, return mocked data
-	return new Promise((resolve) => {
-		setTimeout(() => {
-			if (sensorIds && sensorIds.length > 0) {
-				// If URL params are provided, filter sensors by those IDs
-				const filteredSensors = mockSensors.filter((sensor) =>
-					sensorIds.includes(sensor.sensorId)
-				);
-				// Return filtered sensors (even if empty array - no fallback to all sensors)
-				resolve(filteredSensors);
-			} else {
-				// If no URL params, return all mock sensors
-				resolve(mockSensors);
+	try {
+		// Try to fetch from real API
+		const response = await fetch(
+			'http://10.8.160.254:8000/health/analysis',
+			{
+				method: 'GET',
+				headers: {
+					'Content-Type': 'application/json',
+				},
 			}
-		}, 100); // Simulate network delay
-	});
+		);
+
+		if (!response.ok) {
+			throw new Error(
+				`API request failed with status: ${response.status}`
+			);
+		}
+
+		const apiData: SensorHealthAnalysis[] = await response.json();
+		const sensors = convertApiResponseToSensors(apiData);
+
+		// If URL params are provided, filter sensors by those IDs
+		if (sensorIds && sensorIds.length > 0) {
+			return sensors.filter((sensor) =>
+				sensorIds.includes(sensor.sensorId)
+			);
+		}
+
+		return sensors;
+	} catch (error) {
+		console.warn('API request failed, falling back to mock data:', error);
+
+		// Fallback to mock data - return immediately without Promise wrapper
+		if (sensorIds && sensorIds.length > 0) {
+			// If URL params are provided, filter sensors by those IDs
+			const filteredSensors = mockSensors.filter((sensor) =>
+				sensorIds.includes(sensor.sensorId)
+			);
+			// Return filtered sensors (even if empty array - no fallback to all sensors)
+			return filteredSensors;
+		} else {
+			// If no URL params, return all mock sensors
+			return mockSensors;
+		}
+	}
 };
 
 // Mobile Card Component

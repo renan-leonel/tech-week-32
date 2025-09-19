@@ -6,19 +6,42 @@ import { Badge } from '@/components/ui/badge';
 import { Bot, AlertTriangle, ArrowLeft } from 'lucide-react';
 import { Sensor } from '@/components/SensorTable';
 
-// Simulate LLM API request for diagnosis
-const fetchDiagnosisFromLLM = async (sensor: Sensor): Promise<string> => {
-	// Simulate API call delay
-	await new Promise((resolve) =>
-		setTimeout(resolve, 1000 + Math.random() * 2000)
-	);
+// API function to fetch diagnosis from the backend
+const fetchDiagnosisFromLLM = async (sensorId: string): Promise<string> => {
+	try {
+		const response = await fetch(
+			`http://10.8.160.254:8000/diagnostics/sensor/${sensorId}`,
+			{
+				method: 'GET',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+			}
+		);
 
-	// Simulate potential API failure (5% chance)
-	if (Math.random() < 0.05) {
-		throw new Error('LLM service temporarily unavailable');
-	}
+		if (!response.ok) {
+			throw new Error(
+				`API request failed with status: ${response.status}`
+			);
+		}
 
-	const diagnosis = `🔍 The sensor detected that it is not installed in a suitable location, as no vibration, temperature, or connectivity data has been recorded in the last hour.
+		const diagnosisData = await response.json();
+
+		// Return the diagnosis text from the API response
+		// Assuming the API returns a string directly or has a 'diagnosis' field
+		return typeof diagnosisData === 'string'
+			? diagnosisData
+			: diagnosisData.diagnosis ||
+					diagnosisData.text ||
+					'No diagnosis available';
+	} catch (error) {
+		console.warn(
+			'API request failed, falling back to mock diagnosis:',
+			error
+		);
+
+		// Fallback to mock diagnosis if API fails
+		const mockDiagnosis = `🔍 The sensor detected that it is not installed in a suitable location, as no vibration, temperature, or connectivity data has been recorded in the last hour.
 
 📋 To regularize the installation, please review the sensor installation conditions according to the recommendations below. If necessary, open a support ticket with the Tractian team.
 
@@ -30,7 +53,8 @@ const fetchDiagnosisFromLLM = async (sensor: Sensor): Promise<string> => {
 💚 Check if the gateway light is green or blinking green; if not, open a support ticket with Tractian.
 🏗️ Check if there are metallic obstructions (assets, pipes, walls) between the sensor and the gateway; if yes, reposition either the sensor or the gateway.`;
 
-	return diagnosis;
+		return mockDiagnosis;
+	}
 };
 
 // Mock sensor data (same as in SensorTable)
@@ -108,7 +132,7 @@ const DiagnosisPage = () => {
 			}));
 
 			// Fetch diagnosis from LLM API
-			fetchDiagnosisFromLLM(sensor)
+			fetchDiagnosisFromLLM(sensor.sensorId)
 				.then((fullText) => {
 					let currentIndex = 0;
 
