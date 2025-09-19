@@ -1,0 +1,39 @@
+services:
+  # PostgreSQL Database
+  postgres:
+    build: postgres
+    container_name: ai_diagnosis_db
+    restart: always
+    environment:
+      POSTGRES_DB: ai_diagnosis
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: your_secure_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d ai_diagnosis"]
+      interval: 2s
+      timeout: 5s
+      retries: 5
+
+  # Your AI Diagnosis API
+  api:
+    build: .
+    container_name: ai_diagnosis_api
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://postgres:your_secure_password@postgres:5432/ai_diagnosis
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./api:/app
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+
+volumes:
+  postgres_data:
