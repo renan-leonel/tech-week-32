@@ -1,0 +1,1 @@
+ /Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/.dart_tool/flutter_build/32f52d8ee6ab20c49aeb3ab010b30a03/native_assets.yaml: 

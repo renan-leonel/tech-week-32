@@ -1,0 +1,468 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.tractian.in_app_camera.in_app_camera_example"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+9        android:targetSdkVersion="35" />
+10    <!--
+11         The INTERNET permission is required for development. Specifically,
+12         the Flutter tool needs it to communicate with the running application
+13         to allow setting breakpoints, to provide hot reload, etc.
+14    -->
+15    <uses-permission android:name="android.permission.INTERNET" />
+15-->/Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/android/app/src/debug/AndroidManifest.xml:6:5-66
+15-->/Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/android/app/src/debug/AndroidManifest.xml:6:22-64
+16    <!--
+17     Required to query activities that can process text, see:
+18         https://developer.android.com/training/package-visibility and
+19         https://developer.android.com/reference/android/content/Intent#ACTION_PROCESS_TEXT.
+20
+21         In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin.
+22    -->
+23    <queries>
+23-->/Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/android/app/src/main/AndroidManifest.xml:43:5-48:15
+24        <intent>
+24-->/Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/android/app/src/main/AndroidManifest.xml:44:9-47:18
+25            <action android:name="android.intent.action.PROCESS_TEXT" />
+25-->/Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/android/app/src/main/AndroidManifest.xml:45:13-72
+25-->/Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/android/app/src/main/AndroidManifest.xml:45:21-70
+26
+27            <data android:mimeType="text/plain" />
+27-->/Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/android/app/src/main/AndroidManifest.xml:46:13-50
+27-->/Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/android/app/src/main/AndroidManifest.xml:46:19-48
+28        </intent>
+29    </queries>
+30
+31    <uses-feature android:name="android.hardware.camera.any" />
+31-->[:camera_android_camerax] /Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/build/camera_android_camerax/intermediates/merged_manifest/debug/AndroidManifest.xml:8:5-64
+31-->[:camera_android_camerax] /Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/build/camera_android_camerax/intermediates/merged_manifest/debug/AndroidManifest.xml:8:19-61
+32
+33    <uses-permission android:name="android.permission.CAMERA" />
+33-->[:camera_android_camerax] /Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/build/camera_android_camerax/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-65
+33-->[:camera_android_camerax] /Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/build/camera_android_camerax/intermediates/merged_manifest/debug/AndroidManifest.xml:10:22-62
+34    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+34-->[:camera_android_camerax] /Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/build/camera_android_camerax/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-71
+34-->[:camera_android_camerax] /Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/build/camera_android_camerax/intermediates/merged_manifest/debug/AndroidManifest.xml:11:22-68
+35    <uses-permission
+35-->[:camera_android_camerax] /Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/build/camera_android_camerax/intermediates/merged_manifest/debug/AndroidManifest.xml:12:5-14:38
+36        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+36-->[:camera_android_camerax] /Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/build/camera_android_camerax/intermediates/merged_manifest/debug/AndroidManifest.xml:13:9-65
+37        android:maxSdkVersion="28" />
+37-->[:camera_android_camerax] /Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/build/camera_android_camerax/intermediates/merged_manifest/debug/AndroidManifest.xml:14:9-35
+38    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+38-->[:connectivity_plus] /Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/build/connectivity_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:7:5-79
+38-->[:connectivity_plus] /Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/build/connectivity_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:7:22-76
+39    <uses-permission android:name="android.permission.WAKE_LOCK" />
+39-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:23:5-68
+39-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:23:22-65
+40    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+40-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:25:5-81
+40-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:25:22-78
+41    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+41-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:26:5-77
+41-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:26:22-74
+42
+43    <permission
+43-->[androidx.core:core:1.13.1] /Users/gustavomelo/.gradle/caches/transforms-3/889ae3adf7a24645889ee22f4dad2cac/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
+44        android:name="com.tractian.in_app_camera.in_app_camera_example.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+44-->[androidx.core:core:1.13.1] /Users/gustavomelo/.gradle/caches/transforms-3/889ae3adf7a24645889ee22f4dad2cac/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
+45        android:protectionLevel="signature" />
+45-->[androidx.core:core:1.13.1] /Users/gustavomelo/.gradle/caches/transforms-3/889ae3adf7a24645889ee22f4dad2cac/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
+46
+47    <uses-permission android:name="com.tractian.in_app_camera.in_app_camera_example.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+47-->[androidx.core:core:1.13.1] /Users/gustavomelo/.gradle/caches/transforms-3/889ae3adf7a24645889ee22f4dad2cac/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
+47-->[androidx.core:core:1.13.1] /Users/gustavomelo/.gradle/caches/transforms-3/889ae3adf7a24645889ee22f4dad2cac/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
+48
+49    <application
+50        android:name="android.app.Application"
+51        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+51-->[androidx.core:core:1.13.1] /Users/gustavomelo/.gradle/caches/transforms-3/889ae3adf7a24645889ee22f4dad2cac/transformed/core-1.13.1/AndroidManifest.xml:28:18-86
+52        android:debuggable="true"
+53        android:extractNativeLibs="false"
+54        android:icon="@mipmap/ic_launcher"
+55        android:label="in_app_camera_example" >
+56        <activity
+57            android:name="com.tractian.in_app_camera.in_app_camera_example.MainActivity"
+58            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+59            android:exported="true"
+60            android:hardwareAccelerated="true"
+61            android:launchMode="singleTop"
+62            android:taskAffinity=""
+63            android:theme="@style/LaunchTheme"
+64            android:windowSoftInputMode="adjustResize" >
+65
+66            <!--
+67                 Specifies an Android theme to apply to this Activity as soon as
+68                 the Android process has started. This theme is visible to the user
+69                 while the Flutter UI initializes. After that, this theme continues
+70                 to determine the Window background behind the Flutter UI.
+71            -->
+72            <meta-data
+73                android:name="io.flutter.embedding.android.NormalTheme"
+74                android:resource="@style/NormalTheme" />
+75
+76            <intent-filter>
+77                <action android:name="android.intent.action.MAIN" />
+78
+79                <category android:name="android.intent.category.LAUNCHER" />
+80            </intent-filter>
+81        </activity>
+82        <activity
+83            android:name="com.yalantis.ucrop.UCropActivity"
+84            android:screenOrientation="portrait"
+85            android:theme="@style/Ucrop.CropTheme" />
+86        <!--
+87             Don't delete the meta-data below.
+88             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+89        -->
+90        <meta-data
+91            android:name="flutterEmbedding"
+92            android:value="2" />
+93
+94        <receiver
+94-->[:background_downloader] /Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/build/background_downloader/intermediates/merged_manifest/debug/AndroidManifest.xml:9:9-21:20
+95            android:name="com.bbflight.background_downloader.NotificationRcvr"
+95-->[:background_downloader] /Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/build/background_downloader/intermediates/merged_manifest/debug/AndroidManifest.xml:10:13-79
+96            android:exported="false" >
+96-->[:background_downloader] /Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/build/background_downloader/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-37
+97            <intent-filter>
+97-->[:background_downloader] /Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/build/background_downloader/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-14:29
+98                <action android:name="com.bbflight.background_downloader.cancelActive" />
+98-->[:background_downloader] /Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/build/background_downloader/intermediates/merged_manifest/debug/AndroidManifest.xml:13:17-90
+98-->[:background_downloader] /Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/build/background_downloader/intermediates/merged_manifest/debug/AndroidManifest.xml:13:25-87
+99            </intent-filter>
+100            <intent-filter>
+100-->[:background_downloader] /Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/build/background_downloader/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-17:29
+101                <action android:name="com.bbflight.background_downloader.pause" />
+101-->[:background_downloader] /Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/build/background_downloader/intermediates/merged_manifest/debug/AndroidManifest.xml:16:17-83
+101-->[:background_downloader] /Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/build/background_downloader/intermediates/merged_manifest/debug/AndroidManifest.xml:16:25-80
+102            </intent-filter>
+103            <intent-filter>
+103-->[:background_downloader] /Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/build/background_downloader/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-20:29
+104                <action android:name="com.bbflight.background_downloader.resume" />
+104-->[:background_downloader] /Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/build/background_downloader/intermediates/merged_manifest/debug/AndroidManifest.xml:19:17-84
+104-->[:background_downloader] /Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/build/background_downloader/intermediates/merged_manifest/debug/AndroidManifest.xml:19:25-81
+105            </intent-filter>
+106        </receiver>
+107
+108        <provider
+108-->[:background_downloader] /Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/build/background_downloader/intermediates/merged_manifest/debug/AndroidManifest.xml:23:9-32:20
+109            android:name="com.bbflight.background_downloader.OpenFileProvider"
+109-->[:background_downloader] /Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/build/background_downloader/intermediates/merged_manifest/debug/AndroidManifest.xml:24:13-79
+110            android:authorities="com.tractian.in_app_camera.in_app_camera_example.com.bbflight.background_downloader.fileprovider"
+110-->[:background_downloader] /Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/build/background_downloader/intermediates/merged_manifest/debug/AndroidManifest.xml:25:13-99
+111            android:exported="false"
+111-->[:background_downloader] /Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/build/background_downloader/intermediates/merged_manifest/debug/AndroidManifest.xml:26:13-37
+112            android:grantUriPermissions="true" >
+112-->[:background_downloader] /Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/build/background_downloader/intermediates/merged_manifest/debug/AndroidManifest.xml:27:13-47
+113            <meta-data
+113-->[:background_downloader] /Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/build/background_downloader/intermediates/merged_manifest/debug/AndroidManifest.xml:29:13-31:58
+114                android:name="android.support.FILE_PROVIDER_PATHS"
+114-->[:background_downloader] /Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/build/background_downloader/intermediates/merged_manifest/debug/AndroidManifest.xml:30:17-67
+115                android:resource="@xml/bgd_file_paths" />
+115-->[:background_downloader] /Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/build/background_downloader/intermediates/merged_manifest/debug/AndroidManifest.xml:31:17-55
+116        </provider>
+117
+118        <activity
+118-->[:url_launcher_android] /Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:8:9-11:74
+119            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+119-->[:url_launcher_android] /Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:9:13-74
+120            android:exported="false"
+120-->[:url_launcher_android] /Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:10:13-37
+121            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+121-->[:url_launcher_android] /Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-71
+122
+123        <service
+123-->[androidx.camera:camera-camera2:1.3.4] /Users/gustavomelo/.gradle/caches/transforms-3/ca27e2d69ae52327d4b9360736f7a733/transformed/jetified-camera-camera2-1.3.4/AndroidManifest.xml:24:9-33:19
+124            android:name="androidx.camera.core.impl.MetadataHolderService"
+124-->[androidx.camera:camera-camera2:1.3.4] /Users/gustavomelo/.gradle/caches/transforms-3/ca27e2d69ae52327d4b9360736f7a733/transformed/jetified-camera-camera2-1.3.4/AndroidManifest.xml:25:13-75
+125            android:enabled="false"
+125-->[androidx.camera:camera-camera2:1.3.4] /Users/gustavomelo/.gradle/caches/transforms-3/ca27e2d69ae52327d4b9360736f7a733/transformed/jetified-camera-camera2-1.3.4/AndroidManifest.xml:26:13-36
+126            android:exported="false" >
+126-->[androidx.camera:camera-camera2:1.3.4] /Users/gustavomelo/.gradle/caches/transforms-3/ca27e2d69ae52327d4b9360736f7a733/transformed/jetified-camera-camera2-1.3.4/AndroidManifest.xml:27:13-37
+127            <meta-data
+127-->[androidx.camera:camera-camera2:1.3.4] /Users/gustavomelo/.gradle/caches/transforms-3/ca27e2d69ae52327d4b9360736f7a733/transformed/jetified-camera-camera2-1.3.4/AndroidManifest.xml:30:13-32:89
+128                android:name="androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER"
+128-->[androidx.camera:camera-camera2:1.3.4] /Users/gustavomelo/.gradle/caches/transforms-3/ca27e2d69ae52327d4b9360736f7a733/transformed/jetified-camera-camera2-1.3.4/AndroidManifest.xml:31:17-103
+129                android:value="androidx.camera.camera2.Camera2Config$DefaultProvider" />
+129-->[androidx.camera:camera-camera2:1.3.4] /Users/gustavomelo/.gradle/caches/transforms-3/ca27e2d69ae52327d4b9360736f7a733/transformed/jetified-camera-camera2-1.3.4/AndroidManifest.xml:32:17-86
+130        </service>
+131
+132        <uses-library
+132-->[androidx.window:window:1.2.0] /Users/gustavomelo/.gradle/caches/transforms-3/8859fd2468ade3ef2655d1f63d6737f2/transformed/jetified-window-1.2.0/AndroidManifest.xml:23:9-25:40
+133            android:name="androidx.window.extensions"
+133-->[androidx.window:window:1.2.0] /Users/gustavomelo/.gradle/caches/transforms-3/8859fd2468ade3ef2655d1f63d6737f2/transformed/jetified-window-1.2.0/AndroidManifest.xml:24:13-54
+134            android:required="false" />
+134-->[androidx.window:window:1.2.0] /Users/gustavomelo/.gradle/caches/transforms-3/8859fd2468ade3ef2655d1f63d6737f2/transformed/jetified-window-1.2.0/AndroidManifest.xml:25:13-37
+135        <uses-library
+135-->[androidx.window:window:1.2.0] /Users/gustavomelo/.gradle/caches/transforms-3/8859fd2468ade3ef2655d1f63d6737f2/transformed/jetified-window-1.2.0/AndroidManifest.xml:26:9-28:40
+136            android:name="androidx.window.sidecar"
+136-->[androidx.window:window:1.2.0] /Users/gustavomelo/.gradle/caches/transforms-3/8859fd2468ade3ef2655d1f63d6737f2/transformed/jetified-window-1.2.0/AndroidManifest.xml:27:13-51
+137            android:required="false" />
+137-->[androidx.window:window:1.2.0] /Users/gustavomelo/.gradle/caches/transforms-3/8859fd2468ade3ef2655d1f63d6737f2/transformed/jetified-window-1.2.0/AndroidManifest.xml:28:13-37
+138
+139        <provider
+139-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:29:9-37:20
+140            android:name="androidx.startup.InitializationProvider"
+140-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:30:13-67
+141            android:authorities="com.tractian.in_app_camera.in_app_camera_example.androidx-startup"
+141-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:31:13-68
+142            android:exported="false" >
+142-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:32:13-37
+143            <meta-data
+143-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:34:13-36:52
+144                android:name="androidx.work.WorkManagerInitializer"
+144-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:35:17-68
+145                android:value="androidx.startup" />
+145-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:36:17-49
+146            <meta-data
+146-->[androidx.emoji2:emoji2:1.2.0] /Users/gustavomelo/.gradle/caches/transforms-3/b54c8b34dc2cec64a7baaa02a8a7a5a3/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+147                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+147-->[androidx.emoji2:emoji2:1.2.0] /Users/gustavomelo/.gradle/caches/transforms-3/b54c8b34dc2cec64a7baaa02a8a7a5a3/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
+148                android:value="androidx.startup" />
+148-->[androidx.emoji2:emoji2:1.2.0] /Users/gustavomelo/.gradle/caches/transforms-3/b54c8b34dc2cec64a7baaa02a8a7a5a3/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
+149            <meta-data
+149-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/gustavomelo/.gradle/caches/transforms-3/40a1bd5ff2ce65cd1fad055cc690d356/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:29:13-31:52
+150                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+150-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/gustavomelo/.gradle/caches/transforms-3/40a1bd5ff2ce65cd1fad055cc690d356/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
+151                android:value="androidx.startup" />
+151-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/gustavomelo/.gradle/caches/transforms-3/40a1bd5ff2ce65cd1fad055cc690d356/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
+152            <meta-data
+152-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/gustavomelo/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+153                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+153-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/gustavomelo/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+154                android:value="androidx.startup" />
+154-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/gustavomelo/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+155        </provider>
+156
+157        <service
+157-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:39:9-45:35
+158            android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"
+158-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:40:13-88
+159            android:directBootAware="false"
+159-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:41:13-44
+160            android:enabled="@bool/enable_system_alarm_service_default"
+160-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:42:13-72
+161            android:exported="false" />
+161-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:43:13-37
+162        <service
+162-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:46:9-52:35
+163            android:name="androidx.work.impl.background.systemjob.SystemJobService"
+163-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:47:13-84
+164            android:directBootAware="false"
+164-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:48:13-44
+165            android:enabled="@bool/enable_system_job_service_default"
+165-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:49:13-70
+166            android:exported="true"
+166-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:50:13-36
+167            android:permission="android.permission.BIND_JOB_SERVICE" />
+167-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:51:13-69
+168        <service
+168-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:53:9-59:35
+169            android:name="androidx.work.impl.foreground.SystemForegroundService"
+169-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:54:13-81
+170            android:directBootAware="false"
+170-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:55:13-44
+171            android:enabled="@bool/enable_system_foreground_service_default"
+171-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:56:13-77
+172            android:exported="false" />
+172-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:57:13-37
+173
+174        <receiver
+174-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:61:9-66:35
+175            android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"
+175-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:62:13-88
+176            android:directBootAware="false"
+176-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:63:13-44
+177            android:enabled="true"
+177-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:64:13-35
+178            android:exported="false" />
+178-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:65:13-37
+179        <receiver
+179-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:67:9-77:20
+180            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy"
+180-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:68:13-106
+181            android:directBootAware="false"
+181-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:69:13-44
+182            android:enabled="false"
+182-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:70:13-36
+183            android:exported="false" >
+183-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:71:13-37
+184            <intent-filter>
+184-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:73:13-76:29
+185                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+185-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:74:17-87
+185-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:74:25-84
+186                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+186-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:75:17-90
+186-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:75:25-87
+187            </intent-filter>
+188        </receiver>
+189        <receiver
+189-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:78:9-88:20
+190            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy"
+190-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:79:13-104
+191            android:directBootAware="false"
+191-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:80:13-44
+192            android:enabled="false"
+192-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:81:13-36
+193            android:exported="false" >
+193-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:82:13-37
+194            <intent-filter>
+194-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:84:13-87:29
+195                <action android:name="android.intent.action.BATTERY_OKAY" />
+195-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:85:17-77
+195-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:85:25-74
+196                <action android:name="android.intent.action.BATTERY_LOW" />
+196-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:86:17-76
+196-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:86:25-73
+197            </intent-filter>
+198        </receiver>
+199        <receiver
+199-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:89:9-99:20
+200            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy"
+200-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:90:13-104
+201            android:directBootAware="false"
+201-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:91:13-44
+202            android:enabled="false"
+202-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:92:13-36
+203            android:exported="false" >
+203-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:93:13-37
+204            <intent-filter>
+204-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:95:13-98:29
+205                <action android:name="android.intent.action.DEVICE_STORAGE_LOW" />
+205-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:96:17-83
+205-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:96:25-80
+206                <action android:name="android.intent.action.DEVICE_STORAGE_OK" />
+206-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:97:17-82
+206-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:97:25-79
+207            </intent-filter>
+208        </receiver>
+209        <receiver
+209-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:100:9-109:20
+210            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy"
+210-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:101:13-103
+211            android:directBootAware="false"
+211-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:102:13-44
+212            android:enabled="false"
+212-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:103:13-36
+213            android:exported="false" >
+213-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:104:13-37
+214            <intent-filter>
+214-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:106:13-108:29
+215                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+215-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:107:17-79
+215-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:107:25-76
+216            </intent-filter>
+217        </receiver>
+218        <receiver
+218-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:110:9-121:20
+219            android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver"
+219-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:111:13-88
+220            android:directBootAware="false"
+220-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:112:13-44
+221            android:enabled="false"
+221-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:113:13-36
+222            android:exported="false" >
+222-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:114:13-37
+223            <intent-filter>
+223-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:116:13-120:29
+224                <action android:name="android.intent.action.BOOT_COMPLETED" />
+224-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:117:17-79
+224-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:117:25-76
+225                <action android:name="android.intent.action.TIME_SET" />
+225-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:118:17-73
+225-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:118:25-70
+226                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+226-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:119:17-81
+226-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:119:25-78
+227            </intent-filter>
+228        </receiver>
+229        <receiver
+229-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:122:9-131:20
+230            android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver"
+230-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:123:13-99
+231            android:directBootAware="false"
+231-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:124:13-44
+232            android:enabled="@bool/enable_system_alarm_service_default"
+232-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:125:13-72
+233            android:exported="false" >
+233-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:126:13-37
+234            <intent-filter>
+234-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:128:13-130:29
+235                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies" />
+235-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:129:17-98
+235-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:129:25-95
+236            </intent-filter>
+237        </receiver>
+238        <receiver
+238-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:132:9-142:20
+239            android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver"
+239-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:133:13-78
+240            android:directBootAware="false"
+240-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:134:13-44
+241            android:enabled="true"
+241-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:135:13-35
+242            android:exported="true"
+242-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:136:13-36
+243            android:permission="android.permission.DUMP" >
+243-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:137:13-57
+244            <intent-filter>
+244-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:139:13-141:29
+245                <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS" />
+245-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:140:17-88
+245-->[androidx.work:work-runtime:2.8.1] /Users/gustavomelo/.gradle/caches/transforms-3/1b2de71632408c47d9fe83c75c30a041/transformed/work-runtime-2.8.1/AndroidManifest.xml:140:25-85
+246            </intent-filter>
+247        </receiver>
+248        <receiver
+248-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/gustavomelo/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+249            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+249-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/gustavomelo/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+250            android:directBootAware="false"
+250-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/gustavomelo/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+251            android:enabled="true"
+251-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/gustavomelo/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+252            android:exported="true"
+252-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/gustavomelo/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+253            android:permission="android.permission.DUMP" >
+253-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/gustavomelo/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+254            <intent-filter>
+254-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/gustavomelo/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+255                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+255-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/gustavomelo/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+255-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/gustavomelo/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+256            </intent-filter>
+257            <intent-filter>
+257-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/gustavomelo/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+258                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+258-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/gustavomelo/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+258-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/gustavomelo/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+259            </intent-filter>
+260            <intent-filter>
+260-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/gustavomelo/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+261                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+261-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/gustavomelo/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+261-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/gustavomelo/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+262            </intent-filter>
+263            <intent-filter>
+263-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/gustavomelo/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+264                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+264-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/gustavomelo/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+264-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/gustavomelo/.gradle/caches/transforms-3/408a642162969e960684d9c16b2f116a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
+265            </intent-filter>
+266        </receiver>
+267
+268        <service
+268-->[androidx.room:room-runtime:2.5.0] /Users/gustavomelo/.gradle/caches/transforms-3/113239edc52ac164e69e51fce36da113/transformed/room-runtime-2.5.0/AndroidManifest.xml:24:9-28:63
+269            android:name="androidx.room.MultiInstanceInvalidationService"
+269-->[androidx.room:room-runtime:2.5.0] /Users/gustavomelo/.gradle/caches/transforms-3/113239edc52ac164e69e51fce36da113/transformed/room-runtime-2.5.0/AndroidManifest.xml:25:13-74
+270            android:directBootAware="true"
+270-->[androidx.room:room-runtime:2.5.0] /Users/gustavomelo/.gradle/caches/transforms-3/113239edc52ac164e69e51fce36da113/transformed/room-runtime-2.5.0/AndroidManifest.xml:26:13-43
+271            android:exported="false" />
+271-->[androidx.room:room-runtime:2.5.0] /Users/gustavomelo/.gradle/caches/transforms-3/113239edc52ac164e69e51fce36da113/transformed/room-runtime-2.5.0/AndroidManifest.xml:27:13-37
+272    </application>
+273
+274</manifest>

@@ -1,0 +1,28 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.tractian.in_app_camera.in_app_camera_example.app-mergeDebugResources-56:/values-v35/values-v35.xml",
+            "map": [
+                {
+                    "source": "/Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/libraries/in_app_camera/example/android/app/src/main/res/values-v35/styles.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "2",
+                        "startOffsets": "53",
+                        "endLines": "5",
+                        "endColumns": "10",
+                        "endOffsets": "269"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "10",
+                        "endOffsets": "271"
+                    }
+                }
+            ]
+        }
+    ]
+}

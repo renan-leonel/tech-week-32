@@ -1,0 +1,1 @@
+com.tractian.in_app_camera.in_app_camera

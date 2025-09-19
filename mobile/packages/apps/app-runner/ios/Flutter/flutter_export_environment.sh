@@ -1,0 +1,14 @@
+#!/bin/sh
+# This is a generated file; do not edit or check into version control.
+export "FLUTTER_ROOT=/Users/gustavomelo/fvm/versions/3.27.1"
+export "FLUTTER_APPLICATION_PATH=/Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/apps/app-runner"
+export "COCOAPODS_PARALLEL_CODE_SIGN=true"
+export "FLUTTER_TARGET=/Users/gustavomelo/Documents/GitHub/tractian-mobile/packages/apps/app-runner/lib/main.dart"
+export "FLUTTER_BUILD_DIR=build"
+export "FLUTTER_BUILD_NAME=1.92.0"
+export "FLUTTER_BUILD_NUMBER=434"
+export "DART_DEFINES=T05FX1NJR05BTF9BUEk9MzUzMjQxNWItMjZhNC00NGQyLTg2MjctNDViNjMyMDhmZDFk,U0VOVFJZX0FQST1odHRwczovLzdhNmM0ZWVlYzlkMTRlMjk5MjI1M2NiYzFmNjgxNGIwQG81MTI2NTYuaW5nZXN0LnNlbnRyeS5pby82MTQ0MzQw,REFUQURPR19DTElFTlRfVE9LRU49cHViMWZhM2EyNjI4OWU4YmM4NWNhNGI2NWE5ZDVlODRiNTY=,REFUQURPR19SVU1fU0VUVVA9NGNmZDk5OTAtNmU1Ni00MWU2LWFmNTYtMDNjYTkyOWY1YmM0,REFUQURPR19FTlY9cHJvZA==,U1NPX0NMSUVOVF9JRD1ocTR0NXI0c283YnQxYWIwNWxjcnZldGZp,SU5URVJDT01fQVBQX0lEPWc0cnJ4Njcw,SU5URVJDT01fQU5EUk9JRF9BUElfS0VZPWFuZHJvaWRfc2RrLTgyZDEwZjJhZTUzOTc1ZWJhMDU1ZjIwZjNkMmIyY2I5OTBlMWFlMjQ=,SU5URVJDT01fSU9TX0FQSV9LRVk9aW9zX3Nkay1iMzBlZGNlNjRhODUyMjRlMjVkMGU1Y2FiNDgwYjk5YjE1MzYyOTlm,TEFVTkNIX0RBUktMWV9NT0JfS0VZPW1vYi1mOGJiMjI0Zi1kODgwLTQwOTktYWEzYS1jN2YzZjg0MTU5MjM="
+export "DART_OBFUSCATION=false"
+export "TRACK_WIDGET_CREATION=true"
+export "TREE_SHAKE_ICONS=false"
+export "PACKAGE_CONFIG=/Users/gustavomelo/Documents/GitHub/tractian-mobile/.dart_tool/package_config.json"

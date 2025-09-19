@@ -1,0 +1,15 @@
+R_DEF: Internal format may change without notice
+local
+drawable outline_cancel_24
+drawable outline_download_done_24
+drawable outline_error_outline_24
+drawable outline_file_download_24
+drawable outline_file_upload_24
+drawable outline_pause_24
+drawable outline_play_arrow_24
+string bg_downloader_cancel
+string bg_downloader_notification_channel_description
+string bg_downloader_notification_channel_name
+string bg_downloader_pause
+string bg_downloader_resume
+xml bgd_file_paths

@@ -1,0 +1,32 @@
+<svg width="145" height="108" viewBox="0 0 145 108" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="50" height="28" rx="14" fill="#2188FF"/>
+<g filter="url(#filter0_d_998_2504)">
+<rect x="24" y="2" width="24" height="24" rx="12" fill="white"/>
+</g>
+<rect x="95" width="50" height="28" rx="14" fill="#C1C9D2"/>
+<g filter="url(#filter1_d_998_2504)">
+<rect x="97" y="2" width="24" height="24" rx="12" fill="white"/>
+</g>
+<rect y="38" width="50" height="28" rx="14" fill="#2188FF"/>
+<g filter="url(#filter2_d_998_2504)">
+<rect x="16" y="40" width="32" height="24" rx="12" fill="white"/>
+</g>
+<rect x="95" y="38" width="50" height="28" rx="14" fill="#C1C9D2"/>
+<g filter="url(#filter3_d_998_2504)">
+<rect x="97" y="40" width="32" height="24" rx="12" fill="white"/>
+</g>
+<g opacity="0.4">
+<rect y="76" width="50" height="28" rx="14" fill="#2188FF"/>
+<g filter="url(#filter4_d_998_2504)">
+<rect x="24" y="78" width="24" height="24" rx="12" fill="white"/>
+</g>
+</g>
+<g opacity="0.4">
+<rect x="95" y="76" width="50" height="28" rx="14" fill="#C1C9D2"/>
+<g filter="url(#filter5_d_998_2504)">
+<rect x="97" y="78" width="24" height="24" rx="12" fill="white"/>
+</g>
+</g>
+<defs>
+</defs>
+</svg>
