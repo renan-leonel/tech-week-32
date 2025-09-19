@@ -10,15 +10,7 @@ import {
 	TableRow,
 } from '@/components/ui/table';
 import { Badge } from '@/components/ui/badge';
-import {
-	CheckCircle,
-	X,
-	Brain,
-	Check,
-	Thermometer,
-	Wifi,
-	Zap,
-} from 'lucide-react';
+import { X, Brain, Check, Thermometer, Wifi, Zap } from 'lucide-react';
 import { DiagnosisModal } from './DiagnosisModal';
 import { useIsMobile } from '@/hooks/use-mobile';
 
@@ -33,38 +25,17 @@ export interface Sensor {
 const mockSensors: Sensor[] = [
 	{
 		id: '1',
-		sensorId: 'SENS-001',
-		temperature: true,
+		sensorId: 'DEV2013',
+		temperature: false,
 		vibration: false,
-		connectivity: true,
+		connectivity: false,
 	},
 	{
 		id: '2',
-		sensorId: 'SENS-002',
-		temperature: false,
-		vibration: true,
-		connectivity: false,
-	},
-	{
-		id: '3',
-		sensorId: 'SENS-003',
+		sensorId: 'NYS0043',
 		temperature: true,
 		vibration: true,
 		connectivity: true,
-	},
-	{
-		id: '4',
-		sensorId: 'SENS-004',
-		temperature: false,
-		vibration: false,
-		connectivity: true,
-	},
-	{
-		id: '5',
-		sensorId: 'SENS-005',
-		temperature: true,
-		vibration: false,
-		connectivity: false,
 	},
 ];
 
