@@ -1,3 +1,4 @@
+import logging
 from typing import List, Optional
 from datetime import datetime
 import json
@@ -170,6 +171,10 @@ def populate_from_sample_data(request: PopulateRequest, db: Session = Depends(ge
             sampled_at = record.get('sampled_at')
             if isinstance(sampled_at, str):
                 sampled_at = datetime.fromisoformat(sampled_at.replace('Z', '+00:00'))
+            
+            # Debug output for NYS0043
+            if record.get('sensor_id') == 'NYS0043':
+                logging.info(f"DEBUG: Processing NYS0043 record with gateway_signal: {record.get('gateway_signal')}")
             
             sensor_data = SensorData(
                 asset_id=record.get('asset_id'),
