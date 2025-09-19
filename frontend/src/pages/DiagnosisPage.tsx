@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -37,7 +37,7 @@ const fetchDiagnosisFromLLM = async (sensor: Sensor): Promise<string> => {
 const mockSensors: Sensor[] = [
 	{
 		id: '1',
-		sensorId: 'DEV2013',
+		sensorId: 'SML1627',
 		temperature: false,
 		vibration: false,
 		connectivity: false,
@@ -49,11 +49,19 @@ const mockSensors: Sensor[] = [
 		vibration: true,
 		connectivity: true,
 	},
+	{
+		id: '3',
+		sensorId: 'KPC3319',
+		temperature: true,
+		vibration: true,
+		connectivity: true,
+	},
 ];
 
 const DiagnosisPage = () => {
 	const { sensorId } = useParams<{ sensorId: string }>();
 	const navigate = useNavigate();
+	const diagnosisTextRef = useRef<HTMLPreElement>(null);
 	const [sensor, setSensor] = useState<Sensor | null>(null);
 	const [diagnosisState, setDiagnosisState] = useState<{
 		displayedText: string;
@@ -75,6 +83,16 @@ const DiagnosisPage = () => {
 			setSensor(foundSensor);
 		}
 	}, [sensorId]);
+
+	// Auto-scroll effect when text is streaming
+	useEffect(() => {
+		if (diagnosisState.isStreaming && diagnosisTextRef.current) {
+			diagnosisTextRef.current.scrollIntoView({
+				behavior: 'smooth',
+				block: 'end',
+			});
+		}
+	}, [diagnosisState.displayedText, diagnosisState.isStreaming]);
 
 	useEffect(() => {
 		if (
@@ -239,7 +257,10 @@ const DiagnosisPage = () => {
 											</p>
 										</div>
 									) : (
-										<pre className='whitespace-pre-wrap text-sm text-foreground font-mono leading-relaxed'>
+										<pre
+											ref={diagnosisTextRef}
+											className='whitespace-pre-wrap text-sm text-foreground font-mono leading-relaxed'
+										>
 											{diagnosisState.displayedText}
 											{diagnosisState.isStreaming && (
 												<span className='inline-block w-2 h-4 bg-ai-primary animate-pulse ml-1'></span>

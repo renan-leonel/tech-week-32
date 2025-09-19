@@ -25,7 +25,7 @@ export interface Sensor {
 const mockSensors: Sensor[] = [
 	{
 		id: '1',
-		sensorId: 'DEV2013',
+		sensorId: 'SML1627',
 		temperature: false,
 		vibration: false,
 		connectivity: false,
@@ -33,6 +33,13 @@ const mockSensors: Sensor[] = [
 	{
 		id: '2',
 		sensorId: 'NYS0043',
+		temperature: true,
+		vibration: true,
+		connectivity: true,
+	},
+	{
+		id: '3',
+		sensorId: 'KPC3319',
 		temperature: true,
 		vibration: true,
 		connectivity: true,
@@ -164,8 +171,6 @@ export const SensorTable = () => {
 			try {
 				const urlParams = new URLSearchParams(window.location.search);
 				const sensorIds = urlParams.getAll('sensorId');
-
-				console.log('sensorIds', sensorIds);
 
 				let sensorIdsArray: string[] | undefined;
 				if (sensorIds && sensorIds.length > 0) {
