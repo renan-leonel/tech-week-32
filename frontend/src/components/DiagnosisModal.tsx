@@ -27,69 +27,17 @@ const fetchDiagnosisFromLLM = async (sensor: Sensor): Promise<string> => {
 		throw new Error('LLM service temporarily unavailable');
 	}
 
-	const issues = [];
-	if (!sensor.temperature) issues.push('temperature sensor malfunction');
-	if (!sensor.vibration) issues.push('vibration sensor disconnected');
-	if (!sensor.connectivity) issues.push('network connectivity failure');
+	const diagnosis = `🔍 The sensor detected that it is not installed in a suitable location, as no vibration, temperature, or connectivity data has been recorded in the last hour.
 
-	// Simulate different LLM response styles
-	const responseStyles = [
-		{
-			prefix: '🔍 DETECTED ISSUES:',
-			tempAdvice:
-				'🌡️ TEMPERATURE: Check thermal sensors and calibration. Possible overheating or sensor drift detected.',
-			vibAdvice:
-				'📳 VIBRATION: Inspect mounting brackets and sensor connections. Abnormal vibration patterns indicate potential mechanical wear.',
-			connAdvice:
-				'📡 CONNECTIVITY: Network interface requires attention. Check cables, power supply, and communication protocols.',
-		},
-		{
-			prefix: '⚠️ IDENTIFIED PROBLEMS:',
-			tempAdvice:
-				'🌡️ TEMPERATURE ANALYSIS: Thermal sensor readings indicate potential calibration issues or environmental interference.',
-			vibAdvice:
-				'📳 VIBRATION ANALYSIS: Mechanical resonance patterns suggest bearing wear or misalignment.',
-			connAdvice:
-				'📡 CONNECTIVITY ANALYSIS: Communication protocols experiencing intermittent failures.',
-		},
-		{
-			prefix: '🚨 CRITICAL FINDINGS:',
-			tempAdvice:
-				'🌡️ TEMPERATURE CRITICAL: Sensor drift detected - immediate calibration required.',
-			vibAdvice:
-				'📳 VIBRATION CRITICAL: Abnormal frequency patterns detected - mechanical inspection urgent.',
-			connAdvice:
-				'📡 CONNECTIVITY CRITICAL: Network instability - hardware replacement may be necessary.',
-		},
-	];
+📋 To regularize the installation, please review the sensor installation conditions according to the recommendations below. If necessary, open a support ticket with the Tractian team.
 
-	const style =
-		responseStyles[Math.floor(Math.random() * responseStyles.length)];
-
-	const diagnosis = `AI Diagnosis for ${sensor.sensorId}:
-
-${style.prefix}
-${issues.map((issue) => `• ${issue.toUpperCase()}`).join('\n')}
-
-📊 TECHNICAL ANALYSIS:
-Based on sensor data patterns and historical performance metrics, the following recommendations are suggested:
-
-${!sensor.temperature ? style.tempAdvice : ''}
-${!sensor.vibration ? style.vibAdvice : ''}
-${!sensor.connectivity ? style.connAdvice : ''}
-
-⚡ RECOMMENDED ACTIONS:
-1. Schedule immediate maintenance inspection
-2. Replace faulty sensors as identified
-3. Verify all electrical connections
-4. Test system after repairs
-5. Monitor for 24-48 hours post-maintenance
-
-🎯 PRIORITY LEVEL: ${issues.length > 1 ? 'HIGH' : 'MEDIUM'}
-Estimated repair time: ${issues.length * 2}-${issues.length * 4} hours
-Confidence score: ${Math.floor(85 + Math.random() * 15)}%
-
-This diagnosis is generated using advanced AI pattern recognition algorithms and should be verified by qualified technicians.`;
+📝 Recommendations:
+📍 Check if the distance between the sensor and the gateway is adequate.
+🚫 Check if the asset is blocking the sensor; if yes, reposition either the sensor or the gateway.
+📦 Check if the sensor or the gateway are enclosed; if yes, remove them from the enclosure.
+🔌 Check if the gateway is powered on; if not, turn it on.
+💚 Check if the gateway light is green or blinking green; if not, open a support ticket with Tractian.
+🏗️ Check if there are metallic obstructions (assets, pipes, walls) between the sensor and the gateway; if yes, reposition either the sensor or the gateway.`;
 
 	return diagnosis;
 };
@@ -164,7 +112,7 @@ export const DiagnosisModal = ({
 									},
 								}));
 								currentIndex++;
-								setTimeout(streamText, 30); // Adjust speed here
+								setTimeout(streamText, 10); // Adjust speed here
 							} else {
 								setDiagnosisStates((prev) => ({
 									...prev,
