@@ -118,12 +118,15 @@ const fetchSensors = async (sensorIds?: string[]): Promise<Sensor[]> => {
 const fetchDiagnosisFromLLM = async (sensorId: string): Promise<string> => {
 	try {
 		const response = await fetch(
-			`http://10.8.160.254:8000/diagnostics/sensor/${sensorId}`,
+			`http://10.8.160.254:8000/diagnostics/sensor/${sensorId}/analysis`,
 			{
-				method: 'GET',
+				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
 				},
+				body: JSON.stringify({
+					sensor_id: sensorId,
+				}),
 			}
 		);
 
@@ -137,11 +140,7 @@ const fetchDiagnosisFromLLM = async (sensorId: string): Promise<string> => {
 
 		// Return the diagnosis text from the API response
 		// Assuming the API returns a string directly or has a 'diagnosis' field
-		return typeof diagnosisData === 'string'
-			? diagnosisData
-			: diagnosisData.diagnosis ||
-					diagnosisData.text ||
-					'No diagnosis available';
+		return diagnosisData.llm_analysis;
 	} catch (error) {
 		console.warn(
 			'API request failed, falling back to mock diagnosis:',
@@ -292,7 +291,7 @@ const DiagnosisPage = () => {
 						<p className='text-muted-foreground mb-4'>
 							The sensor with ID "{sensorId}" could not be found.
 						</p>
-						<Button onClick={() => navigate('/')}>
+						<Button onClick={() => navigate(-1)}>
 							<ArrowLeft className='h-4 w-4 mr-2' />
 							Back to Sensors
 						</Button>
@@ -318,7 +317,7 @@ const DiagnosisPage = () => {
 					<div className='mb-6'>
 						<Button
 							variant='outline'
-							onClick={() => navigate('/')}
+							onClick={() => navigate(-1)}
 							className='mb-4'
 						>
 							<ArrowLeft className='h-4 w-4 mr-2' />
