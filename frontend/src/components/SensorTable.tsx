@@ -164,13 +164,13 @@ export const SensorTable = () => {
 			setLoading(true);
 			try {
 				const urlParams = new URLSearchParams(window.location.search);
-				const sensorIds = urlParams.get('sensors');
+				const sensorIds = urlParams.getAll('sensorId');
+
+				console.log('sensorIds', sensorIds);
 
 				let sensorIdsArray: string[] | undefined;
-				if (sensorIds) {
-					sensorIdsArray = sensorIds
-						.split(',')
-						.map((id) => id.trim());
+				if (sensorIds && sensorIds.length > 0) {
+					sensorIdsArray = sensorIds.map((id) => id.trim());
 				}
 
 				const fetchedSensors = await fetchSensors(sensorIdsArray);
